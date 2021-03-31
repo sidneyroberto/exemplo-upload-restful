@@ -6,7 +6,7 @@ export const uploadRouter = Router()
 
 uploadRouter.post('/', (req, res) => {
     if (!req.files || Object.keys(req.files).length == 0) {
-        return res.status(404).send('Nenhum arquivo recebido')
+        return res.status(400).send('Nenhum arquivo recebido')
     }
 
     const nomesArquivos = Object.keys(req.files)
